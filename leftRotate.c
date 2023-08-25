@@ -1,31 +1,28 @@
 #include "monty.h"
 
 /**
- * rotate_left - Rotates the stack to the top
- * @head: Pointer to the head of the stack
- * @counter: Line count (unused)
- *
- * Return: Nothing
- */
-void rotate_left(stack_t **head, __attribute__((unused)) unsigned int counter)
+* rotate_left- function that rotates the stack to the top
+* @head: head of the stack
+* @counter: line count
+*
+* Return: nothing
+*/
+void rotate_left(stack_t **head,  __attribute__((unused)) unsigned int counter)
 {
-    stack_t *current = *head, *newHead;
+	stack_t *tmp = *head, *aux;
 
-    if (*head == NULL || (*head)->next == NULL)
-    {
-        return; // Nothing to rotate
-    }
-
-    newHead = (*head)->next;
-    newHead->prev = NULL;
-
-    while (current->next != NULL)
-    {
-        current = current->next;
-    }
-
-    current->next = *head;
-    (*head)->next = NULL;
-    (*head)->prev = current;
-    (*head) = newHead;
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		return;
+	}
+	aux = (*head)->next;
+	aux->prev = NULL;
+	while (tmp->next != NULL)
+	{
+		tmp = tmp->next;
+	}
+	tmp->next = *head;
+	(*head)->next = NULL;
+	(*head)->prev = tmp;
+	(*head) = aux;
 }

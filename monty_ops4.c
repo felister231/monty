@@ -2,17 +2,17 @@
 
 /**
 * printEVerything - function that prints everything in the stack
-* @head: double head pointer to the stack
-* @counter: unused line count
+* @stack_hea_d: double stack_hea_d pointer to the stack
+* @countLine: unused line count
 *
 * Return: nothing
 */
-void printEVerything(stack_t **head, unsigned int counter)
+void printEVerything(stack_t **stack_hea_d, unsigned int countLine)
 {
 	stack_t *h;
-	(void)counter;
+	(void)countLine;
 
-	h = *head;
+	h = *stack_hea_d;
 	if (h == NULL)
 		return;
 	while (h)
@@ -24,17 +24,17 @@ void printEVerything(stack_t **head, unsigned int counter)
 
 /**
 * swapTop_twoElem - function that swaps the top two elements of the stack
-* @head: head of stack
-* @counter: line count
+* @stack_hea_d: stack_hea_d of stack
+* @countLine: line count
 *
 * Return: nothing
 */
-void swapTop_twoElem(stack_t **head, unsigned int counter)
+void swapTop_twoElem(stack_t **stack_hea_d, unsigned int countLine)
 {
 	stack_t *h;
 	int length = 0, temp;
 
-	h = *head;
+	h = *stack_hea_d;
 	while (h)
 	{
 		h = h->next;
@@ -42,13 +42,13 @@ void swapTop_twoElem(stack_t **head, unsigned int counter)
 	}
 	if (length < 2)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", countLine);
 		fclose(bus.file);
 		free(bus.content);
-		free_Memstack(*head);
+		free_Memstack(*stack_hea_d);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
+	h = *stack_hea_d;
 	temp = h->n;
 	h->n = h->next->n;
 	h->next->n = temp;

@@ -13,12 +13,12 @@ A language interpreter made in the C programming language to manage stacks and q
 * You allowed to use a maximum of one global variable
 * No more than 5 functions per file
 * You are allowed to use the C standard library
-* The prototypes of all your functions should be included in your header file called monty.h
-* Don’t forget to push your header file
-* All your header files should be include guarded
+* The prototypes of all your functions should be included in your stack_hea_der file called monty.h
+* Don’t forget to push your stack_hea_der file
+* All your stack_hea_der files should be include guarded
 * You are expected to do the tasks in the order shown in the project
 
-addnode - Adds a new node to the head of the stack
+addnode - Adds a new node to the stack_hea_d of the stack
 execute_instructions - Execute the opcode execute_instructions
 free_Memstack - Frees a doubly linked list
 clearBusLifi - Clears a specific value in a structure

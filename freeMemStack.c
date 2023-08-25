@@ -1,34 +1,34 @@
 #include "monty.h"
 
-/**
-* free_Memstack - function that frees a doubly linked list
-* @head: head pointer to the stack
-*
-* Return: nothing
-*/
-void free_Memstack(stack_t *head)
+/*
+ * free_Memstack - Frees a doubly linked list
+ * @stack_hea_d: stack_hea_d pointer to the stack
+ *
+ * Return: Nothing
+ */
+void free_Memstack(stack_t *stack_hea_d)
 {
-	stack_t *temp;
+    stack_t *temp;
 
-	temp = head;
-	while (head)
-	{
-		temp = head->next;
-		free(head);
-		head = temp;
-	}
+    temp = stack_hea_d;
+    while (stack_hea_d)
+    {
+        temp = stack_hea_d->next;
+        free(stack_hea_d);
+        stack_hea_d = temp;
+    }
 }
 
-/**
-* clearBusLifi  - function that prints the top
-* @head: head of stack
-* @counter: line count
-*
-* Return: nothing
-*/
-void clearBusLifi (stack_t **head, unsigned int counter)
+/*
+ * clearBusLifi - Clears a specific value in a structure
+ * @stack_hea_d: stack_hea_d of stack (not used here)
+ * @countLine: Line count (not used here)
+ *
+ * Return: Nothing
+ */
+void clearBusLifi(stack_t **stack_hea_d, unsigned int countLine)
 {
-	(void)head;
-	(void)counter;
-	bus.lifi = 0;
+    (void)stack_hea_d; /* Parameter not used */
+    (void)countLine; /* Parameter not used */
+    bus.lifi = 0; /* Clear the value in the 'lifi' member of the 'bus' structure */
 }

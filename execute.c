@@ -3,16 +3,16 @@
 /**
  * execute_instructions - Execute the opcode instructions
  * @lineContent: Line content
- * @stackHead: Head of the stack
+ * @stackstack_hea_d: stack_hea_d of the stack
  * @lineNumber: Line count
  * @montyFile: Pointer to the monty file stream
  *
  * Return: 0 on success, 1 on failure
  */
-int execute_instructions(char *lineContent, stack_t **stackHead, unsigned int lineNumber, FILE *montyFile)
+int execute_instructions(char *lineContent, stack_t **stackstack_hea_d, unsigned int lineNumber, FILE *montyFile)
 {
     instruction_t opcodes[] = {
-        {"push", pushNode}, {"pall", printEVerything}, {"pint", printStackHead},
+        {"push", pushNode}, {"pall", printEVerything}, {"pint", printStackstack_hea_d},
         {"pop", printTop_stack},
         {"swap", swapTop_twoElem},
         {"add", addTop_twoElem},
@@ -43,7 +43,7 @@ int execute_instructions(char *lineContent, stack_t **stackHead, unsigned int li
     {
         if (strcmp(currentOpcode, opcodes[opcodeIndex].opcode) == 0)
         {
-            opcodes[opcodeIndex].f(stackHead, lineNumber);
+            opcodes[opcodeIndex].f(stackstack_hea_d, lineNumber);
             return (0);
         }
         opcodeIndex++;
@@ -54,7 +54,7 @@ int execute_instructions(char *lineContent, stack_t **stackHead, unsigned int li
         fprintf(stderr, "L%d: unknown instruction %s\n", lineNumber, currentOpcode);
         fclose(montyFile);
         free(lineContent);
-        free_Memstack(*stackHead);
+        free_Memstack(*stackstack_hea_d);
         exit(EXIT_FAILURE);
     }
 

@@ -41,11 +41,11 @@ int main(int argc, char *argv[])
 		counter++;
 		if (read_line > 0)
 		{
-			execute(content, &stack, counter, file);
+			execute_instructions(content, &stack, counter, file);
 		}
 		free(content);
 	}
-	free_stack(stack);
+	free_Memstack(stack);
 	fclose(file);
 return (0);
 }

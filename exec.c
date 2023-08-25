@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-* execute - function that executes the opcode
+* execute_instructions - function that execute_instructionss the opcode
 * @stack: head stack linked list
 * @counter: line count
 * @file: pointer to monty file stream
@@ -9,24 +9,24 @@
 *
 * Return: nothing
 */
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int execute_instructions(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
-				{"pop", f_pop},
-				{"swap", f_swap},
-				{"add", f_add},
-				{"nop", f_nop},
-				{"sub", f_sub},
-				{"div", f_div},
-				{"mul", f_mul},
-				{"mod", f_mod},
-				{"pchar", f_pchar},
-				{"pstr", f_pstr},
-				{"rotl", f_rotl},
-				{"rotr", f_rotr},
+				{"push", pushNode}, {"pall", printEVerything}, {"pint", printStackHead},
+				{"pop", printTop_stack},
+				{"swap", swapTop_twoElem},
+				{"add", addTop_twoElem},
+				{"nop", doNothing},
+				{"sub", subtractNodes},
+				{"div", divideTop_twoElem},
+				{"mul", multiplyTop_twoElem},
+				{"mod", getModulo},
+				{"pchar", printChar_sring},
+				{"pstr", printStr_top},
+				{"rotl", rotate_left},
+				{"rotr", rotate_right},
 				{"queue", f_queue},
-				{"stack", f_stack},
+				{"stack", clearBusLifi },
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
@@ -48,7 +48,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
-		free_stack(*stack);
+		free_Memstack(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
 }
